@@ -20,7 +20,10 @@ function requestWeather(lngLat) {
         },
         success: function (data) {
             console.log(data)
-            sortData(data);
+            $('#forecastOuter').innerHTML = "";
+            appendWeather(sortData(data));
+
+
 
         },
         error: function (request, textStatus, errorThrown) {
