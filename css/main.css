@@ -1,0 +1,9 @@
+#mapHouse {
+    width: 1000px;
+    height: 400px;
+    margin: 100px auto;
+}
+
+.mapboxgl-ctrl-geocoder {
+    margin: auto !important;
+}
