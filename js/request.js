@@ -1,12 +1,11 @@
-
-
 // to get weather off of wheere we start, just calling request weather on San Antonio's coords.
 requestWeather({
     lng: -98.493629,
     lat: 29.424122
 });
+
 //function for getting and returning our data;
-function requestWeather(lngLat){
+function requestWeather(lngLat) {
     let lat = lngLat.lat;
     let lon = lngLat.lng;
 
@@ -19,29 +18,27 @@ function requestWeather(lngLat){
             lon: lon,
             units: "imperial",
         },
-        success: function(data){
+        success: function (data) {
             console.log(data)
             sortData(data);
 
         },
-        error: function(request, textStatus, errorThrown){
-            alert("Status: " + textStatus); alert("Error: " + errorThrown);
+        error: function (request, textStatus, errorThrown) {
+            alert("Status: " + textStatus);
+            alert("Error: " + errorThrown);
         }
     })
 }
 
 // function to be called in the success of our request;
-function sortData(data){
-    let forecast = data.list;
+function sortData(data) {
+    let forecastList = data.list;
+    let forecast = [forecastList[0], forecastList[8], forecastList[16], forecastList[24], forecastList[32]];
     let weatherObject = {
         name: data.city.name,
         country: data.city.country,
         // forecast: data.list,
-        today: forecast[0],
-        day2: forecast[8],
-        day3: forecast[16],
-        day4: forecast[24],
-        day5: forecast[32],
+        forecast: forecast
 
     }
     console.log(weatherObject);
