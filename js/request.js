@@ -45,6 +45,6 @@ function sortData(data){
 
     }
     console.log(weatherObject);
-
+    return weatherObject;
 
 }
