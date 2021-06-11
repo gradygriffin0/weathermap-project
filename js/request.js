@@ -21,6 +21,7 @@ function requestWeather(lngLat){
         },
         success: function(data){
             console.log(data)
+            sortData(data);
 
         },
         error: function(request, textStatus, errorThrown){
@@ -31,18 +32,19 @@ function requestWeather(lngLat){
 
 // function to be called in the success of our request;
 function sortData(data){
-
+    let forecast = data.list;
     let weatherObject = {
         name: data.city.name,
         country: data.city.country,
-        forecast: data.list,
-        today: this.forecast[0],
-        day2: this.forecast[8],
-        day3: this.forecast[16],
-        day4: this.forecast[24],
-        day5: this.forecast[32],
+        // forecast: data.list,
+        today: forecast[0],
+        day2: forecast[8],
+        day3: forecast[16],
+        day4: forecast[24],
+        day5: forecast[32],
 
     }
+    console.log(weatherObject);
 
 
 }
