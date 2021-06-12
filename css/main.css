@@ -1,9 +1,17 @@
 #mapHouse {
     width: 1000px;
     height: 400px;
-    margin: 100px auto;
+    margin: 50px auto;
 }
-
+#todayOutter {
+    width: 1000px;
+    height: 200px;
+    margin: auto;
+}
 .mapboxgl-ctrl-geocoder {
     margin: auto !important;
 }
+/*div {*/
+/*    text-align: center;*/
+
+/*}*/
