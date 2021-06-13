@@ -6,8 +6,16 @@ requestWeather({
 
 //function for getting and returning our data;
 function requestWeather(lngLat) {
-    let lat = lngLat.lat;
-    let lon = lngLat.lng;
+    let lat, lon;
+    if (!Array.isArray(lngLat)){
+         lat = lngLat.lat;
+         lon = lngLat.lng;
+    }
+    else {
+         lon = lngLat[0]
+         lat = lngLat[1]
+    }
+
 
     $.ajax({
         url: "https://api.openweathermap.org/data/2.5/forecast",
@@ -37,12 +45,11 @@ function requestWeather(lngLat) {
 function sortData(data) {
     let forecastList = data.list;
     let forecast = [forecastList[0], forecastList[8], forecastList[16], forecastList[24], forecastList[32]];
-    daySort(forecast);
     let weatherObject = {
         name: data.city.name,
         country: data.city.country,
         // forecast: data.list,
-        forecast: forecast
+        forecast: forecast,
 
     }
     console.log(weatherObject);
@@ -51,10 +58,10 @@ function sortData(data) {
 }
 
 
-function daySort(arr){
- arr.forEach(function(obj){
-     let date = obj.dt_txt.split(" ")[0]
+function daySort(day){
+    console.log(day);
+     let date = day.split(" ")[0] + "T00:00:00";
 
-     console.log(date);
- })
+
+return new Date(date).toDateString();
 }

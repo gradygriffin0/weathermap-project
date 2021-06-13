@@ -40,6 +40,7 @@ function geocoderResultEvent(geocoder){
 
         console.log(e.result);
         createMarker(e.result.geometry.coordinates);
+        requestWeather(e.result.geometry.coordinates);
     })
 
 }

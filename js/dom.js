@@ -11,9 +11,13 @@ function appendWeather(obj) {
     }
     let inner = $('#forecastInner');
     obj.forecast.forEach(function (day, index) {
-        inner.append(`<div class="col" id="day-${index}"><div class="card"> <h5 class="card-header py-2">${day.dt_txt}</h5>
-                <p class="card-body">temp: ${day.main.temp}, high: ${day.main.temp_max}, low: ${day.main.temp_min}, humidity: ${day.main.humidity}</p></div>
-</div>`)
+        inner.append(`<div class="col" id="day-${index}">
+                        <div class="card"> 
+                            <h5 class="card-header bg-primary text-white py-2">${daySort(day.dt_txt)}</h5>
+                            <img style="width:100px; height: 100px; margin: auto;" src="http://openweathermap.org/img/w/${day.weather[0].icon}.png">
+                            <p class="card-body">temp: ${day.main.temp}, high: ${day.main.temp_max}, low: ${day.main.temp_min}, humidity: ${day.main.humidity}</p>
+                        </div>
+                        </div>`)
     })
 
 }
