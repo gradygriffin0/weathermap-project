@@ -40,6 +40,13 @@ mapClick();
 function mapClick(){
     map.on('click', function(e){
         console.log(e.lngLat);
+        createMarker(e.lngLat)
         requestWeather(e.lngLat);
+
     })
+}
+createMarker([-98.49523561316934, 29.428026803961302]);
+function createMarker(point){
+    marker.remove()
+    return new mapboxgl.Marker().setLngLat(point).addTo(map);
 }
