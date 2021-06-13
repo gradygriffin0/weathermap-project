@@ -37,6 +37,7 @@ function requestWeather(lngLat) {
 function sortData(data) {
     let forecastList = data.list;
     let forecast = [forecastList[0], forecastList[8], forecastList[16], forecastList[24], forecastList[32]];
+    daySort(forecast);
     let weatherObject = {
         name: data.city.name,
         country: data.city.country,
@@ -47,4 +48,13 @@ function sortData(data) {
     console.log(weatherObject);
     return weatherObject;
 
+}
+
+
+function daySort(arr){
+ arr.forEach(function(obj){
+     let date = obj.dt_txt.split(" ")[0]
+
+     console.log(date);
+ })
 }
