@@ -5,7 +5,8 @@ const mapboxToken = MAPBOX_TOKEN;
 mapboxgl.accessToken = mapboxToken
 
 var map;
-let geocoder = createGeocoder();
+var marker;
+var geocoder = createGeocoder();
 
 
 // drawMap function: generate and append Mapbox onto the page
@@ -33,6 +34,15 @@ appendGeocoder(geocoder);
 function appendGeocoder(geocoder){
 document.getElementById('search-bar').appendChild(geocoder.onAdd(map));
 }
+geocoderResultEvent(geocoder);
+function geocoderResultEvent(geocoder){
+    geocoder.on('result', function(e){
+
+        console.log(e.result);
+        createMarker(e.result.geometry.coordinates);
+    })
+
+}
 
 
 // add a map click event to log lat and lon on click;
@@ -45,8 +55,14 @@ function mapClick(){
 
     })
 }
+
+//  createMarker which generates new marker obj
+
 createMarker([-98.49523561316934, 29.428026803961302]);
 function createMarker(point){
-    marker.remove()
-    return new mapboxgl.Marker().setLngLat(point).addTo(map);
+    if (map._markers.length !== 0){
+        marker.remove();
+
+    }
+    marker = new mapboxgl.Marker().setLngLat(point).addTo(map);
 }
