@@ -21,11 +21,11 @@
         <div id="nav" class="px-3 py-2 bg-primary text-white">
 
             <div class="container">
-                <!--                flex container to house link list and picture-->
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 
                     <a id="nav-g-logo" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none display-6"
-                       href="base.html"><img src="assets/brightness-alt-high-fill.svg" alt="1"> &nbsp GradMap</a>
+                       ><img src="assets/brightness-alt-high-fill.svg" alt="1"> &nbsp GradMap</a>
+                    <div id="timeTop" class="text-white px-5 display-6"></div>
 
 
                 </div>
@@ -37,9 +37,9 @@
         <div id="dadDiv" class="bg-light">
 <!--            <div id="todayOutter" class="text-center mt-3 border"></div>-->
 
-            <div id="forecastOuter" class="text-center mt-5 "></div>
-            <div id="search-bar" class="mt-4"></div>
-            <div id="mapHouse" class="mt-4"></div>
+            <div id="forecastOuter" class="text-center order-2 mt-5 "></div>
+            <div id="search-bar" class="mt-4 order-1 order-md-3"></div>
+            <div id="mapHouse" class="mt-4 order-0 order-md-last"></div>
 
 
         </div>
@@ -47,10 +47,13 @@
 
         <div id="foot" class="px-3 py-2 bg-primary text-white ">
 
-            <div class="footer">
-                <ul class="list-unstyled" id="footUL">
-                    <li><button id="sydney" class="btn-white text-white">Sydney</button></li>
-                    <li><button id="ny" class="btn-white text-white">New York City</button></li>
+            <div class="footer d-none d-md-block">
+                <ul class="list-unstyled m-3" id="footUL">
+                    <li><button id="sa" class="btn btn-light text-primary">Home</button></li>
+                    <li><button id="sydney" class="btn btn-light text-primary">Sydney</button></li>
+                    <li><button id="ny" class="btn btn-light text-primary">New York City</button></li>
+                    <li><button id="london" class="btn btn-light btn-round text-primary">London</button></li>
+                    <li><button id="hawaii" class="btn btn-light btn-round text-primary">Hawaii County</button></li>
                 </ul>
 
             </div>

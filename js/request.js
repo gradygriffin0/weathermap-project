@@ -60,7 +60,8 @@ function sortData(data) {
 
 function daySort(day){
     console.log(day);
-     let date = day.split(" ")[0] + "T00:00:00";
+    let date = day.split(" ")[0]
+        // + "T00:00:00";
 
 
 return new Date(date).toDateString();

@@ -12,8 +12,8 @@
 }
 .mapboxgl-ctrl-geocoder {
     max-width: none !important;
-    width: 90% !important;
-    margin: auto !important;
+    width: 50% !important;
+    margin: 50px auto !important;
 }
 
 #forecastOuter{
@@ -40,4 +40,10 @@
     justify-content: space-evenly;
     width: 100%;
     margin: auto;
+}
+
+#dadDiv {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
 }

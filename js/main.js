@@ -85,3 +85,31 @@ $('#ny').click(function(e){
     requestWeather({lat: 40.7306, lng: -73.9866});
 })
 
+$('#london').click(function(e){
+    map.flyTo({
+        center: [-0.1276, 51.5073],
+
+    })
+    createMarker({lat: 51.5073, lng: -0.1276});
+    requestWeather({lat: 51.5073, lng: -0.1276});
+})
+
+$('#sa').click(function(e){
+    map.flyTo({
+        center: [-98.49523561316934, 29.428026803961302 ]
+
+    })
+    createMarker({lat: 29.428026803961302, lng: -98.49523561316934});
+    requestWeather({lat: 29.428026803961302, lng: -98.49523561316934});
+})
+
+$('#hawaii').click(function(){
+    map.flyTo({
+        center: [-155.5067, 19.5333 ]
+
+    })
+    createMarker({lat: 19.5333, lng: -155.5067});
+    requestWeather({lat: 19.5333, lng: -155.5067});
+})
+//{lat: 19.5333, lng: -155.5067}
+

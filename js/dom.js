@@ -3,16 +3,16 @@ function appendWeather(obj) {
     house.html("");
     if ((obj.name === "") || (obj.country === "")) {
         alert("Oops, Couldn't find that area's name");
-        house.append(`<h1 class="display-4">Weather for that area:</h1> <div class="row row-cols-5" id="forecastInner">
+        house.append(`<span class="display-4 rounded bg-primary text-white">Weather for that area:</span> <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 justify-content-md-center" id="forecastInner">
             </div>`);
     } else {
-        house.append(`<h1 class="display-4 m-4 " >${obj.name}, ${obj.country}</h1><div class="row row-cols-5" id="forecastInner">
+        house.append(`<span class="display-4 rounded bg-primary text-white px-3" >${obj.name}, ${obj.country}</span><div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 justify-content-md-center" id="forecastInner">
             </div>`);
     }
     let inner = $('#forecastInner');
     obj.forecast.forEach(function (day, index) {
         inner.append(`<div class="col" id="day-${index}">
-                        <div class="card rounded"> 
+                        <div class="card rounded mt-5"> 
                             <h5 class="card-header bg-primary text-white py-2">${daySort(day.dt_txt)}</h5>
                             <img style="width:50px; height: 50px; margin: 10px auto;" src="assets/weather/${day.weather[0].icon}.svg">
                             <ul class="card-body list-unstyled">
@@ -28,3 +28,11 @@ function appendWeather(obj) {
 
 
 }
+
+console.log(Math.floor(Date.now() / 1000))
+let timeStamp = new Date(Date.now());
+$("#timeTop").text(`${(timeStamp).toLocaleString("en-US", { 
+    hour: "numeric",
+    minute: "numeric",
+    
+})}`);
