@@ -67,3 +67,21 @@ function createMarker(point){
     }
     marker = new mapboxgl.Marker().setLngLat(point).addTo(map);
 }
+
+$('#sydney').click(function(e){
+    map.flyTo({
+      center: [151.2156, -33.8565],
+
+    })
+    createMarker({lat: -33.8565, lng: 151.2156});
+    requestWeather({lat: -33.8565, lng: 151.2156});
+})
+$('#ny').click(function(e){
+    map.flyTo({
+        center: [-73.9866, 40.7306],
+
+    })
+    createMarker({lat: 40.7306, lng: -73.9866});
+    requestWeather({lat: 40.7306, lng: -73.9866});
+})
+
