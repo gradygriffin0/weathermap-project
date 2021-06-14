@@ -29,9 +29,11 @@ function appendWeather(obj) {
 
 }
 
-console.log(Math.floor(Date.now() / 1000))
+// console.log(Math.floor(Date.now() / 1000))
 let timeStamp = new Date(Date.now());
-$("#timeTop").text(`${(timeStamp).toLocaleString("en-US", { 
+// console.log(timeStamp)
+$("#timeTop").text(`${(timeStamp)
+    .toLocaleString("en-US", { 
     hour: "numeric",
     minute: "numeric",
     
