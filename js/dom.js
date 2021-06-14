@@ -30,14 +30,16 @@ function appendWeather(obj) {
 }
 
 // console.log(Math.floor(Date.now() / 1000))
-let timeStamp = new Date(Date.now());
+
 // console.log(timeStamp)
-$("#timeTop").text(`${(timeStamp)
+setInterval(function(){
+    let timeStamp = new Date(Date.now());
+    $("#timeTop").text(`${(timeStamp)
     .toLocaleString("en-US", { 
     hour: "numeric",
     minute: "numeric",
     
-})}`);
+})}`)}, 100);
 
 $('*').css({
     "font-family": "'Hammersmith One', sans-serif;",
