@@ -6,7 +6,7 @@ function appendWeather(obj) {
         house.append(`<span class="display-4 rounded bg-primary text-white">Weather for that area:</span> <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 justify-content-md-center" id="forecastInner">
             </div>`);
     } else {
-        house.append(`<span class="display-4 rounded bg-primary text-white px-3" >${obj.name}, ${obj.country}</span><div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 justify-content-md-center" id="forecastInner">
+        house.append(`<span class="display-4 rounded bg-primary text-white px-3" >${obj.name}, ${obj.country}:</span><div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 justify-content-md-center" id="forecastInner">
             </div>`);
     }
     let inner = $('#forecastInner');
@@ -36,3 +36,8 @@ $("#timeTop").text(`${(timeStamp).toLocaleString("en-US", {
     minute: "numeric",
     
 })}`);
+
+$('*').css({
+    "font-family": "'Hammersmith One', sans-serif;",
+    }
+)

@@ -15,7 +15,7 @@ function drawMap(){
     map = new mapboxgl.Map( {
         container: "mapHouse",
         center: [-98.493629, 29.424122],
-        style: 'mapbox://styles/mapbox/streets-v11',
+        style: 'mapbox://styles/gradman/ckpwt0alv0n6f17o6loe4mirq',
         zoom: 9
     })
 }
