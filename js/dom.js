@@ -16,11 +16,12 @@ function appendWeather(obj) {
                             <h5 class="card-header bg-primary text-white py-2">${daySort(day.dt_txt)}</h5>
                             <img style="width:100px; height: 100px; margin: auto;" src="http://openweathermap.org/img/w/${day.weather[0].icon}.png">
                             <ul class="card-body list-unstyled">
-                            <li class="currentTemp">${day.main.temp}&deg;</li>
-                                <li>High: ${day.main.temp_max}&deg; </li>
-                                <li>Low: ${day.main.temp_min}&deg; </li>
-                                <li>Humidity: ${day.main.humidity}&deg; </li>
+                            <li class="currentTemp">${(day.main.temp).toFixed(0)}&deg;</li>
+                                <li>High: ${parseFloat(day.main.temp_max).toFixed(0)}&deg; </li>
+                                <li>Low: ${parseFloat(day.main.temp_min).toFixed(0)}&deg; </li>
+                                <li>Humidity: ${parseFloat(day.main.humidity).toFixed(0)}&deg; </li>
                             </ul>
+                            <div class="card-footer">${day.weather[0].description}</div>
                         </div>
                         </div>`)
     })
