@@ -29,6 +29,8 @@ function appendWeather(obj) {
 
 }
 
+
+
 // console.log(Math.floor(Date.now() / 1000))
 
 // console.log(timeStamp)
@@ -45,3 +47,4 @@ $('*').css({
     "font-family": "'Hammersmith One', sans-serif;",
     }
 )
+
